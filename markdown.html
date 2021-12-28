@@ -18,6 +18,7 @@
   <div class="markdown-html">
     <script>$.get((searchMap.md || 'readme.md'), function(text) { 
 		text = text.replace('](packs', '](markdown.html?md=yugioh-ex2006/packs')
+		text = text.replace('](../images', '](yugioh-ex2006/images')
 		document.write(markdownit().render(text)); 
 	});</script>
   </div>
