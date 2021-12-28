@@ -16,9 +16,13 @@
 <body>
 
   <div class="markdown-html">
-    <script>$.get((searchMap.md || 'readme.md'), function(text) { 
-		text = text.replace('](packs', '](markdown.html?md=yugioh-ex2006/packs')
-		text = text.replace('](../images', '](yugioh-ex2006/images')
+    <script>
+	// thanks to https://github.com/wxqee/markdown-html-example.git 
+	var url = (searchMap.md || 'readme.md')
+	document.title = url.substring(url.lastIndexOf('/')+1);
+	$.get(url, function(text) { 
+		text = text.replaceAll('](packs', '](markdown.html?md=yugioh-ex2006/packs')
+		text = text.replaceAll('](../images', '](yugioh-ex2006/images')
 		document.write(markdownit().render(text)); 
 	});</script>
   </div>
